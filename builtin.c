@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * _myexit - exits the shell
  * @info: Structure containing potential arguments. Used to maintain
@@ -9,6 +10,7 @@
 int _myexit(info_t *info)
 {
 	int exitcheck;
+
 	if (info->argv[1])  /* If there is an exit arguement */
 	{
 		exitcheck = _erratoi(info->argv[1]);
@@ -26,6 +28,7 @@ int _myexit(info_t *info)
 	info->err_num = -1;
 	return (-2);
 }
+
 /**
  * _mycd - changes the current directory of the process
  * @info: Structure containing potential arguments. Used to maintain
@@ -36,6 +39,7 @@ int _mycd(info_t *info)
 {
 	char *s, *dir, buffer[1024];
 	int chdir_ret;
+
 	s = getcwd(buffer, 1024);
 	if (!s)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
@@ -74,6 +78,7 @@ int _mycd(info_t *info)
 	}
 	return (0);
 }
+
 /**
  * _myhelp - changes the current directory of the process
  * @info: Structure containing potential arguments. Used to maintain
